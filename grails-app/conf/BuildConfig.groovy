@@ -61,6 +61,8 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
 		compile ":asset-pipeline:2.1.1" // Added By Safa
+		//compile ":spring-security-core:2.0-RC4" // Added By Safa
+		compile ":font-awesome-resources:4.2.0.0" //Added By Safa
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.6.1" // or ":hibernate:3.6.10.18"
