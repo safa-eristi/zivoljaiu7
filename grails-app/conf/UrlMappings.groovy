@@ -7,11 +7,13 @@ class UrlMappings {
             }
         }
 		
+		"/"(controller: 'home', action: 'index') // Home Page
+		
 		"/login/$action?"(controller: "login") // For Security
 		"/logout/$action?"(controller: "logout")
 		
 		
-        "/"(view:"/index")
+        // "/"(view:"/index")
         "500"(view:'/error')
 	}
 }

@@ -19,7 +19,6 @@
 		      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		    <![endif]-->
 
-    <g:layoutHead />
   </head>
   <body>
   
@@ -70,12 +69,16 @@
     <g:layoutBody />  <!-- Additional Content Will Go Here -->
   
   
+  
+  
+  
+  
 	<footer class="footer">
 	<div class="container">
 	<div class="row-fluid">
 	<div class="span6"> <p class="copyright">
 	
-	<asset:image src="logo-ts.png" class="foot-logo" alt="Brand Logo"/> &copy; 2013 <strong>u7ZivOljai</strong> Video Portal Theme
+	<asset:image src="logo-ts.png" class="foot-logo" alt="Brand Logo"/> &copy; 2015 <strong>u7ZivOljai</strong> Video Portal
 	</div>
 	<div class="span6">   <div class="pagination pull-right">
 	 <ul>
@@ -88,6 +91,10 @@
 	</div>
 	</div>
 	</div>
+	
+	
+	
+	
 	</footer>
 
 	

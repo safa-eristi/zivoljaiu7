@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>zivoljaiu7</name>
+	<name>org.zivoljaiu7</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -26,7 +26,7 @@
 		<link>
 			<name>.link_to_grails_plugins</name>
 			<type>2</type>
-			<location>D:/Safa.Eristi/Personal/Projects/zivoljaiu7/target/work/plugins</location>
+			<location>D:/Safa.Eristi/Personal/Projects/org.zivoljaiu7/target/work/plugins</location>
 		</link>
 	</linkedResources>
 </projectDescription>
