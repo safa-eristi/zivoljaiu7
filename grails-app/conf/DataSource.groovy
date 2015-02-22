@@ -21,7 +21,7 @@ environments {
         dataSource {
 			
 			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-			url = "jdbc:mysql://localhost:7171/zivoljaiu7"
+			url = "jdbc:mysql://localhost:3306/zivoljaiu7"
 			username="grails"
 			password="zivoljaiu7"
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div id="thumbnails" class="container">
 
  <!-- Start Info Unit -->
 
@@ -8,19 +8,34 @@
 
 <div>
 
-
 <div class="row-fluid" >
 <div class="span9 main-section">
 
 
-<g:render template="optionbar"></g:render>
+<!-- Options bar (Left Section) -->
+
+<div id="options" class="options-bar">
+
+<g:select class="span2 pull-left" optionValue="${it}"
+          name="sortOption" from="${sortOptions}" 
+          onchange="${remoteFunction(
+                        action:'sortMovies',
+						update:'thumbnails',
+                        params:'\'sortOption=\' + escape(this.value)',
+                        onSuccess:'updateMovies(data);')}"/>
+             <span><strong>${moviesCount}</strong> Titles Found</span>
+</div>
+
+
+
+ <!-- End Options Bar -->
 
 
 <!-- Start Left Section -->
 
 <div class="row-fluid">
 <ul class="thumbnails">
-               
+                         
 <g:each in="${movies}" var="movie">
 
 	<li class="span3">
@@ -47,3 +62,16 @@
  <!-- End Left Section -->
 
  <g:render template="rightside"></g:render>
+ 
+ 
+  
+ 
+
+<g:javascript>
+
+function updateMovies(){
+
+	console.write("AHANDA");
+}
+
+</g:javascript>

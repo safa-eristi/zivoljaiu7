@@ -1,15 +1,15 @@
 package zivoljaiu7
 
-import java.util.concurrent.ConcurrentHashMap.ForEachEntryTask;
 
 class HomeController {
 
+	def sortOptions = ["Sort By","Oldest","Newest","Popular","Highest Rating","Lowest Rating"]
+	
     def index() { 
 		
 		def movies = Movie.findAll();
 		def moviesCount = movies.size()
-		def sortOptions = ["Sort By","Oldest","Newest","Popular","Highest Rating","Lowest Rating"]
-		
+	
 		return [movies: movies,moviesCount : moviesCount,sortOptions:sortOptions]  // Return the list of TV Shows for thumbnail view
 	}
 	
@@ -32,14 +32,16 @@ class HomeController {
 			println descendingList.each { // TEST
 				println it.name + " " + it.imdb_rating
 			}
-			return descendingList
+			
+			render(template: 'thumbnails', model: [movies: descendingList,sortOptions:sortOptions])
+			
 			
 		}else if (sortParameter == "Lowest Rating"){
 		
 			println sortedByRating.each { // TEST
 				println it.name + " " + it.imdb_rating
 			}
-			return sortedByRating
+			render(template: 'thumbnails', model: [movies: sortedByRating,sortOptions:sortOptions])
 		
 		} else if(sortParameter == "Newest") {
 		
@@ -48,7 +50,7 @@ class HomeController {
 			println descendingList.each { // TEST
 				println it.name + " " + it.release_year
 			}
-			return descendingList
+			render(template: 'thumbnails', model: [movies: descendingList,sortOptions:sortOptions])
 			
 		
 		}else if (sortParameter == "Oldest"){
@@ -56,7 +58,7 @@ class HomeController {
 			println sortedByReleaseYear.each { // TEST
 				println it.name + " " + it.release_year
 			}
-			return sortedByReleaseYear
+			render(template: 'thumbnails', model: [movies: sortedByReleaseYear,sortOptions:sortOptions]) 
 		
 		}else {
 		
