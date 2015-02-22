@@ -1,6 +1,6 @@
 package zivoljaiu7
 
-class Episode {
+class Episode { // Todo : Unique values must be defined
 
 	String name
 	Date release_date

@@ -21,36 +21,27 @@
 <div class="row-fluid">
 <ul class="thumbnails">
                
+<g:each in="${movies}" var="movie">
 
+	<li class="span3">
+	<div class="thumbnail">
+	<img data-src="holder.js/300x200" alt="300x200"  src="http://placehold.it/300x400">
+	<div class="caption">
+	<h6><a href="">${movie.name}</a></h6>
+	<p>${movie.summary}</p>
+	</div>
+	</div>
+	</li>
 
-<li class="span3">
-<div class="thumbnail">
-<img data-src="holder.js/300x200" alt="300x200"  src="http://placehold.it/300x400">
-<div class="caption">
-<h6><a href="">Thumbnail label</a></h6>
-<p>Description</p>
-</div>
-</div>
-</li>
-
-
+</g:each>
 
 </ul>
 </div>
 
 <div class="pagination pagination-small pull-right">
-       <ul>
-         <li><a href="#">«</a></li>
-         <li><a href="#">1</a></li>
-         <li><a href="#">2</a></li>
-         <li><a href="#">3</a></li>
-         <li><a href="#">4</a></li>
-         <li><a href="#">5</a></li>
-         <li><a href="#">»</a></li>
+       <ul>         
        </ul>
      </div>
-
-
  </div>
 
  <!-- End Left Section -->
