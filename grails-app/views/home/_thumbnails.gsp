@@ -21,8 +21,8 @@
           onchange="${remoteFunction(
                         action:'sortMovies',
 						update:'thumbnails',
-                        params:'\'sortOption=\' + escape(this.value)',
-                        onSuccess:'updateMovies(data);')}"/>
+                        params:'\'sortOption=\' + escape(this.value)'
+                        )}"/>
              <span><strong>${moviesCount}</strong> Titles Found</span>
 </div>
 

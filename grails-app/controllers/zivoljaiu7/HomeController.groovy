@@ -16,6 +16,7 @@ class HomeController {
 	def sortMovies(){
 		
 		def movies = Movie.findAll();
+		def moviesCount = movies.size()
 		def sortParameter = params?.sortOption
 		println "Sort Parameter is  " + sortParameter // TEST
 		
@@ -33,7 +34,7 @@ class HomeController {
 				println it.name + " " + it.imdb_rating
 			}
 			
-			render(template: 'thumbnails', model: [movies: descendingList,sortOptions:sortOptions])
+			render(template: 'thumbnails', model: [movies: descendingList,sortOptions:sortOptions,moviesCount : moviesCount])
 			
 			
 		}else if (sortParameter == "Lowest Rating"){
@@ -41,7 +42,7 @@ class HomeController {
 			println sortedByRating.each { // TEST
 				println it.name + " " + it.imdb_rating
 			}
-			render(template: 'thumbnails', model: [movies: sortedByRating,sortOptions:sortOptions])
+			render(template: 'thumbnails', model: [movies: sortedByRating,sortOptions:sortOptions,moviesCount : moviesCount])
 		
 		} else if(sortParameter == "Newest") {
 		
@@ -50,7 +51,7 @@ class HomeController {
 			println descendingList.each { // TEST
 				println it.name + " " + it.release_year
 			}
-			render(template: 'thumbnails', model: [movies: descendingList,sortOptions:sortOptions])
+			render(template: 'thumbnails', model: [movies: descendingList,sortOptions:sortOptions,moviesCount : moviesCount])
 			
 		
 		}else if (sortParameter == "Oldest"){
@@ -58,7 +59,7 @@ class HomeController {
 			println sortedByReleaseYear.each { // TEST
 				println it.name + " " + it.release_year
 			}
-			render(template: 'thumbnails', model: [movies: sortedByReleaseYear,sortOptions:sortOptions]) 
+			render(template: 'thumbnails', model: [movies: sortedByReleaseYear,sortOptions:sortOptions,moviesCount : moviesCount]) 
 		
 		}else {
 		
