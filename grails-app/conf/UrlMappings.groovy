@@ -7,7 +7,7 @@ class UrlMappings {
             }
         }
 		
-		"/"(controller: 'home', action: 'index') // Home Page
+		"/"(controller: 'movie', action: 'index') // Home Page
 		
 		"/login/$action?"(controller: "login") // For Security
 		"/logout/$action?"(controller: "logout")
