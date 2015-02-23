@@ -9,7 +9,6 @@ class Movie {
 	String country
 	String duration
 	String summary
-	String thumbnail_location
 	String file_location
 	
 	static hasMany = [genres : Genre, , subtitles: Subtitle]
@@ -21,7 +20,6 @@ class Movie {
 		country(blank:false)
 		duration(blank:false)
 		summary(blank:false)
-		thumbnail_location(blank:false)
 		file_location(blank:false)
     }
 }

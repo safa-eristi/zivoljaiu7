@@ -19,32 +19,28 @@
 <g:select class="span2 pull-left" optionValue="${it}"
           name="sortOption" from="${sortOptions}" 
           onchange="${remoteFunction(
-                        action:'sortMovies',
+                        action:'sortTvshows',
 						update:'thumbnails',
                         params:'\'sortOption=\' + escape(this.value)'
                         )}"/>
-             <span><strong>${moviesCount}</strong> Titles Found</span>
+             <span><strong>${tvshowsCount}</strong> Titles Found</span>
 </div>
 
-
-
- <!-- End Options Bar -->
-
+<!-- End Options Bar -->
 
 <!-- Start Left Section -->
 
 <div class="row-fluid">
 <ul class="thumbnails">
                          
-<g:each in="${movies}" var="movie">
+<g:each in="${tvshows}" var="tvshow">
 
 	<li class="span3">
 	<div class="thumbnail">
-	<asset:image src="thumbnails/movie/${movie.name.toLowerCase().replaceAll("\\s","")}.jpg"/>
-	
+	<asset:image src="thumbnails/tvshow/${tvshow.name.toLowerCase().replaceAll("\\s","")}.jpg"/>
 	<div class="caption">
-	<h6><a href="">${movie.name}</a></h6>
-	<p>${movie.summary}</p>
+	<h6><a href="">${tvshow.name}</a></h6>
+	<p>${tvshow.summary}</p>
 	</div>
 	</div>
 	</li>
@@ -64,14 +60,12 @@
 
  <g:render template="rightside"></g:render>
  
- 
 </div>
 </div>
 </div>
 </div>
 </div>
  
-
 <g:javascript>
 
 function updateMovies(){

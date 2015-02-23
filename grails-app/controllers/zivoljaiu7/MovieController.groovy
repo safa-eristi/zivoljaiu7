@@ -13,6 +13,20 @@ class MovieController {
 		return [movies: movies,moviesCount : moviesCount,sortOptions:sortOptions]  // Return the list of TV Shows for thumbnail view
 	}
 	
+	def search(){
+		
+		def searchParam =  params.searchString
+		println "SEARCHINGGGG MOVIESS " + params.searchString
+		def resultMovies = Movie.findAllByNameLike("%"+searchParam+"%")
+		
+		println "FOUNDED MOVIES " + resultMovies
+		
+		def moviesCount = resultMovies.size()
+		
+		
+		render(template: 'thumbnails', model: [movies: resultMovies,sortOptions:sortOptions,moviesCount : moviesCount])
+	}
+	
 	def sortMovies(){
 		
 		def movies = Movie.findAll();
@@ -20,12 +34,19 @@ class MovieController {
 		def sortParameter = params?.sortOption
 		println "Sort Parameter is  " + sortParameter // TEST
 		
-		def sortedByRating = movies.sort{a,b -> a.imdb_rating <=> b.imdb_rating}
-		def sortedByReleaseYear = movies.sort{a,b -> a.release_year <=> b.release_year}
+		def sortedByRating = movies.sort(false) {it.imdb_rating}
+		println "------ RATING SORT -----------"
+		println  sortedByRating
+		println "------ RATING SORT ----thumbnails-------"
+		def sortedByReleaseYear = movies.sort(false){it.release_year}
+		println "------ RELEASE YEAR SORT -----------"
+		println  sortedByReleaseYear
+		println "------ RELEASE YEAR SORT -----------"
+		
 		
 		if (sortParameter == "Sort By"){
 			
-			// DO NOTHING
+			// DO NOTHING	
 		}else if(sortParameter == "Highest Rating" || sortParameter == "Popular"){
 			
 			def descendingList = sortedByRating.reverse()
@@ -33,12 +54,11 @@ class MovieController {
 			println descendingList.each { // TEST
 				println it.name + " " + it.imdb_rating
 			}
-			
 			render(template: 'thumbnails', model: [movies: descendingList,sortOptions:sortOptions,moviesCount : moviesCount])
-			
 			
 		}else if (sortParameter == "Lowest Rating"){
 		
+			println "LISTE NOLDU " + sortedByRating
 			println sortedByRating.each { // TEST
 				println it.name + " " + it.imdb_rating
 			}

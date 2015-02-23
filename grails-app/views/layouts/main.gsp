@@ -1,8 +1,17 @@
+<%
+def url = request.forwardURI
+def tvPage=0
+if(url.contains('tvshow')){
+	tvpage=1
+}
+
+%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>u7ZivOljai - Video Portal Theme</title>
+    <title>u7ZivOljai</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -33,17 +42,35 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </a>
-	         <a href="index.htm"> <h1>.</h1></a>
+	         <a href="<%request.forwardURI%>"> <h1>.</h1></a>
 	          <div class="nav-collapse collapse">
 	            <form class="navbar-form pull-left">
 	<div class="input-append">
-	  <input class="span3" id="appendedInputButtons" type="text">
-	  <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+	
+	<input id="searchInput" class="span3" id="appendedInputButtons" type="text" onkeyup="${remoteFunction(
+                       action:'search',
+					   update:'thumbnails',
+                       params:'\'searchString=\' + escape(this.value)'
+                       )}">  
+	<button class="btn btn-primary" type="button" onclick="${remoteFunction(
+        action:'search',
+		   update:'thumbnails',
+        params:'\'searchString=\' + searchInput.value'
+        )}"><i class="icon-search"></i></button>
 	</div>           
 	</form>
             <ul class="nav">
-              <li class="active"><a href="#">Movies</a></li>
-              <li><a href="#">TV Shows</a></li>
+            
+              <g:if test="${tvpage == 1}">
+              	 <li><a href="${createLink(controller : 'Movie', action:'index')}">Movies</a></li>
+              	 <li  class="active"><a href="${createLink(controller : 'Tvshow', action:'index')}">TV Shows</a></li>
+              
+              </g:if>	
+              <g:else>
+	              <li class="active"><a href="${createLink(controller : 'Movie', action:'index')}">Movies</a></li>
+	              <li><a href="${createLink(controller : 'Tvshow', action:'index')}">TV Shows</a></li>
+              </g:else>
+              
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -67,11 +94,7 @@
  	<!-- End Header -->
  	
     <g:layoutBody />  <!-- Additional Content Will Go Here -->
-  
-  
-  
-  
-  
+ 
   
 	<footer class="footer">
 	<div class="container">

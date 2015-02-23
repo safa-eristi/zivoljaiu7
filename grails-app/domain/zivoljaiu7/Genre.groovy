@@ -11,7 +11,6 @@ class Genre {
 	
 	GenreName name
 	
-
     static constraints = {
 		name blank : false
     }

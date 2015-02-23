@@ -2,6 +2,7 @@ package zivoljaiu7
 
 class Episode { // Todo : Unique values must be defined
 
+	String episodeNo
 	String name
 	Date release_date
 	String summary
@@ -14,5 +15,6 @@ class Episode { // Todo : Unique values must be defined
 		release_date(blank:false)
 		summary(blank:false)
 		file_location(blank:false)
+		episodeNo(blank:false)
     }
 }

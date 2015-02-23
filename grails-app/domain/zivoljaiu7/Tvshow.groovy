@@ -8,10 +8,8 @@ class Tvshow {
 	String country
 	String duration
 	String summary
-	String thumbnail_location
 	
 	static hasMany = [seasons : Season,genres : Genre]
-	
 	
     static constraints = {
 		
@@ -21,6 +19,5 @@ class Tvshow {
 		country(blank:false)
 		duration(blank:false)
 		summary(blank:false)
-		thumbnail_location(blank:false)
     }
 }

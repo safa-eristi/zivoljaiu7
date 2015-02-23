@@ -6,17 +6,17 @@
   <ul class="nav nav-list">
                 <li class="nav-header">filter by</li>
                 <li class="active"><a onclick="${remoteFunction(
-                    action:'sortMovies',
+                    action:'sortTvshows',
 					update:'thumbnails',
                     params:'\'sortOption=Newest\''
                     )}"><i class="icon-time"></i> Recently added</a></li>
                 <li><a onclick="${remoteFunction(
-                    action:'sortMovies',
+                    action:'sortTvshows',
 					update:'thumbnails',
                     params:'\'sortOption=Popular\''
                     )}"><i class="icon-heart-empty"></i> Most Popular</a></li>
                 <li><a onclick="${remoteFunction(
-                    action:'sortMovies',
+                    action:'sortTvshows',
 					update:'thumbnails',
                     params:'\'sortOption=Highest Rating\''
                     )}"><i class="icon-star-empty"></i> Highest Rating</a></li>
