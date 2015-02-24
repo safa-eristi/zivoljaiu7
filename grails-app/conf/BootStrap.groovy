@@ -9,9 +9,9 @@ class BootStrap {
 		Subtitle subtitle1 = new Subtitle(fileLocation: "saasd",language: Subtitle.SubtitleLanguage.ENGLISH  )
 		Subtitle subtitle2 = new Subtitle(fileLocation: "saasd",language: Subtitle.SubtitleLanguage.ENGLISH  )
 		Subtitle subtitle3 = new Subtitle(fileLocation: "saasd",language: Subtitle.SubtitleLanguage.ENGLISH  )
-		def movie1 = new Movie(country: "U.S.A",duration: "122 Min.",imdb_rating: 9.7,summary: "Some Text", release_year: "2011",name: "The Cove",file_location: "abele")
-		def movie2 = new Movie(country: "Turkey",duration: "112 Min.",imdb_rating: 3.7,summary: "Some Other Text", release_year: "2008",name: "The Hangover",file_location: "c drive")
-		def movie3 = new Movie(country: "Korea",duration: "190 Min.",imdb_rating: 8.0,summary: "Korean movie about an old man", release_year: "2006",name: "Oldboy",file_location: "e drive")
+		def movie1 = new Movie(country: "U.S.A",duration: "122 Min.",imdb_rating: 9.7,summary: "Some Text", release_year: "2011",name: "The Cove",file_location: "http://static-ua2.ororo.tv/uploads/movie/file/93/__www.UsaBit.com___-_playnow-Hachiko.a.dog_s.story_720p_x264-1.webm")
+		def movie2 = new Movie(country: "Turkey",duration: "112 Min.",imdb_rating: 3.7,summary: "Some Other Text", release_year: "2008",name: "The Hangover",file_location: "http://static-ua2.ororo.tv/uploads/movie/file/93/__www.UsaBit.com___-_playnow-Hachiko.a.dog_s.story_720p_x264-1.webm")
+		def movie3 = new Movie(country: "Korea",duration: "190 Min.",imdb_rating: 8.0,summary: "Korean movie about an old man", release_year: "2006",name: "Oldboy",file_location: "http://static-ua2.ororo.tv/uploads/movie/file/93/__www.UsaBit.com___-_playnow-Hachiko.a.dog_s.story_720p_x264-1.webm")
 		
 		movie1.addToGenres(genre1)
 		movie1.addToSubtitles(subtitle1)

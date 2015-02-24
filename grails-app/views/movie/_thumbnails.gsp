@@ -1,3 +1,4 @@
+<%@page import="liquibase.precondition.core.PreconditionContainer.OnSqlOutputOption"%>
 <div id="thumbnails" class="container">
 
  <!-- Start Info Unit -->
@@ -21,7 +22,8 @@
           onchange="${remoteFunction(
                         action:'sortMovies',
 						update:'thumbnails',
-                        params:'\'sortOption=\' + escape(this.value)'
+                        params:'\'sortOption=\' + escape(this.value)',
+						onSuccess:'clearSearchInput();'
                         )}"/>
              <span><strong>${moviesCount}</strong> Titles Found</span>
 </div>
@@ -70,13 +72,4 @@
 </div>
 </div>
 </div>
- 
 
-<g:javascript>
-
-function updateMovies(){
-
-	console.write("AHANDA");
-}
-
-</g:javascript>

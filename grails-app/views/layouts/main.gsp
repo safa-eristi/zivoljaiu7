@@ -4,7 +4,6 @@ def tvPage=0
 if(url.contains('tvshow')){
 	tvpage=1
 }
-
 %>
 
 <!DOCTYPE html>
@@ -101,7 +100,7 @@ if(url.contains('tvshow')){
 	<div class="row-fluid">
 	<div class="span6"> <p class="copyright">
 	
-	<asset:image src="logo-ts.png" class="foot-logo" alt="Brand Logo"/> &copy; 2015 <strong>u7ZivOljai</strong> Video Portal
+	<asset:image src="logo-ts.png" class="foot-logo" alt="Brand Logo"/> &copy; 2015 <strong>u7ZivOljai</strong>
 	</div>
 	<div class="span6">   <div class="pagination pull-right">
 	 <ul>
@@ -115,10 +114,8 @@ if(url.contains('tvshow')){
 	</div>
 	</div>
 	
-	
 	</footer>
 
-	
 	    <!-- Include Javascript/JQuery Assets
 	    ================================================== -->
 	    <!-- Placed at the end of the document so the pages load faster -->
@@ -140,4 +137,15 @@ if(url.contains('tvshow')){
   
    
   </body>
+  
+  <g:javascript>
+
+function clearSearchInput(){ // Clear the search input when the any filter is used
+
+	var x = document.getElementById("searchInput");
+	x.value="";
+}
+
+</g:javascript>
+  
 </html>

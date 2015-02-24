@@ -21,7 +21,8 @@
           onchange="${remoteFunction(
                         action:'sortTvshows',
 						update:'thumbnails',
-                        params:'\'sortOption=\' + escape(this.value)'
+                        params:'\'sortOption=\' + escape(this.value)',
+						onSuccess:'clearSearchInput();'
                         )}"/>
              <span><strong>${tvshowsCount}</strong> Titles Found</span>
 </div>
@@ -65,12 +66,3 @@
 </div>
 </div>
 </div>
- 
-<g:javascript>
-
-function updateMovies(){
-
-	console.write("AHANDA");
-}
-
-</g:javascript>

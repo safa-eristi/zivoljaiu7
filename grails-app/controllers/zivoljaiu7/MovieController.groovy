@@ -23,7 +23,6 @@ class MovieController {
 		
 		def moviesCount = resultMovies.size()
 		
-		
 		render(template: 'thumbnails', model: [movies: resultMovies,sortOptions:sortOptions,moviesCount : moviesCount])
 	}
 	
