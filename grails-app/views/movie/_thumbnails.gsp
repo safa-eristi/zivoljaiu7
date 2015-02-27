@@ -43,7 +43,6 @@
 	<li class="span3">
 	<div class="thumbnail">
 	<asset:image src="thumbnails/movie/${movie.name.toLowerCase().replaceAll("\\s","")}.jpg"/>
-	
 	<div class="caption">
 	<h6><a href="">${movie.name}</a></h6>
 	<p>${movie.summary}</p>

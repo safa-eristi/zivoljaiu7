@@ -15,18 +15,20 @@ if(url.contains('tvshow')){
     <meta name="description" content="">
     <meta name="author" content="">
     
-		     <!-- Include CSS Assets -->
-		    <asset:stylesheet src="jkit.css"/>
-		    <asset:stylesheet src="bootstrap.css"/>
-		    <asset:stylesheet src="app.css"/>
-		    <asset:stylesheet src="font-awesome.css"/>
-		    <asset:stylesheet src="bootstrap-responsive.css"/>
-		
-		    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-		    <!--[if lt IE 9]>
-		      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		    <![endif]-->
+     <!-- Include CSS Assets -->
+    <asset:stylesheet src="jkit.css"/>
+    <asset:stylesheet src="bootstrap.css"/>
+    <asset:stylesheet src="app.css"/>
+    <asset:stylesheet src="font-awesome.css"/>
+    <asset:stylesheet src="bootstrap-responsive.css"/>
 
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+	<link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+	<script src="//vjs.zencdn.net/4.12/video.js"></script>
   </head>
   <body>
   
