@@ -1,4 +1,5 @@
 <%@page import="liquibase.precondition.core.PreconditionContainer.OnSqlOutputOption"%>
+
 <div id="thumbnails" class="container">
 
  <!-- Start Info Unit -->
@@ -11,7 +12,6 @@
 
 <div class="row-fluid" >
 <div class="span9 main-section">
-
 
 <!-- Options bar (Left Section) -->
 
@@ -42,7 +42,10 @@
 
 	<li class="span3">
 	<div class="thumbnail">
-	<asset:image src="thumbnails/movie/${movie.name.toLowerCase().replaceAll("\\s","")}.jpg"/>
+	<g:renderImageThumbnail type="Movies" name="${movie.name.toLowerCase().replaceAll("\\s","")}">
+	</g:renderImageThumbnail >
+	
+	
 	<div class="caption">
 	<h6><a href="">${movie.name}</a></h6>
 	<p>${movie.summary}</p>

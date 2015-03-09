@@ -38,7 +38,8 @@
 
 	<li class="span3">
 	<div class="thumbnail">
-	<asset:image src="thumbnails/tvshow/${tvshow.name.toLowerCase().replaceAll("\\s","")}.jpg"/>
+	<g:renderImageThumbnail type="Tvshows" name="${tvshow.name.toLowerCase().replaceAll("\\s","")}">
+	</g:renderImageThumbnail >
 	<div class="caption">
 	<h6><a href="">${tvshow.name}</a></h6>
 	<p>${tvshow.summary}</p>
@@ -65,4 +66,17 @@
 </div>
 </div>
 </div>
+
+<div id="videoPlaybackDiv" style="position:absolute; top:0px; left:0px; width:90%; height:90%; display:none; z-index:9998; background-color:black;">
+
+<video id="example_video_1" class="video-js vjs-default-skin"
+  controls preload="auto"
+  poster="http://video-js.zencoder.com/oceans-clip.png"
+  data-setup='{"example_option":true}'>
+ <source src="http://static-ua.ororo.tv/uploads/video/file/43/Friends_S01E03_-_The_One_with_the_Thumb.webm" type='video/webm' />
+</video>
+
+</div> 
+
+
 </div>
